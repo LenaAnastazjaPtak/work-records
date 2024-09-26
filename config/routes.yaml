@@ -13,3 +13,8 @@ api_working_time_create:
     path: /api/working-time
     controller: App\Controller\WorkingTimeController::createWorkTime
     methods: POST
+
+api_work_summary:
+    path: /api/work-summary
+    controller: App\Controller\WorkingSummaryController::getWorkingSummary
+    methods: GET
