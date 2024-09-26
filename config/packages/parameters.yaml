@@ -1,0 +1,4 @@
+parameters:
+  work_hours_norm: 40
+  hourly_rate: 20
+  overtime_rate_multiplier: 2.0
