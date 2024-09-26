@@ -8,3 +8,8 @@ api_employee_create:
     path: /api/employee
     controller: App\Controller\EmployeeController::createEmployee
     methods: POST
+
+api_working_time_create:
+    path: /api/working-time
+    controller: App\Controller\WorkingTimeController::createWorkTime
+    methods: POST
