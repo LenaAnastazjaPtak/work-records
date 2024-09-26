@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Uid\Uuid;
 
 #[ORM\Entity(repositoryClass: EmployeeRepository::class)]
 class Employee
@@ -31,9 +32,12 @@ class Employee
     #[ORM\OneToMany(targetEntity: WorkingTime::class, mappedBy: 'employee', orphanRemoval: true)]
     private Collection $workingTimes;
 
-    public function __construct()
+    public function __construct(string $name, string $lastname)
     {
         $this->workingTimes = new ArrayCollection();
+        $this->uuid = Uuid::v4();
+        $this->name = $name;
+        $this->lastname = $lastname;
     }
 
     public function getId(): ?int
