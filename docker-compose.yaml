@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:8
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: true
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: work_records
+      MYSQL_USER:
+      MYSQL_PASSWORD:
+    volumes:
+      - db-vol:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  phpmyadmin:
+    image: phpmyadmin
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      UPLOAD_LIMIT: 40M
+    restart: always
+    ports:
+      - "8080:80"
+
+volumes:
+  db-vol:
+  caddy_data:
+  caddy_config:
