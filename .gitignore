@@ -11,3 +11,4 @@
 /.idea/commandlinetools/schemas/frameworkDescriptionVersion1.1.4.xsd
 /.idea/commandlinetools/Symfony_03_10_2024__16_14.xml
 /.idea/php.xml
+/tools/php-cs-fixer/vendor/
