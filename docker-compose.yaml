@@ -1,14 +1,21 @@
 version: '3'
 
 services:
+  app:
+    build: .
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - "8000:80"
+    depends_on:
+      - db
+
   db:
     image: mysql:8
     environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: true
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: work_records
-      MYSQL_USER:
-      MYSQL_PASSWORD:
+      MYSQL_DATABASE: symfony
     volumes:
       - db-vol:/var/lib/mysql
     ports:
@@ -26,5 +33,3 @@ services:
 
 volumes:
   db-vol:
-  caddy_data:
-  caddy_config:
