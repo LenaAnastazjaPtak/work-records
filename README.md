@@ -4,17 +4,15 @@
 
 To test the application locally, you need to install:
 
-1. PHP 8.3.11 or higher, 
-2. Composer, 
-3. Symfony CLI 5.10.2 or higher, 
-4. Docker
+1. Composer
+2. Docker
 
 You should configure the database in Your ```.env.local```.
+For example ```DATABASE_URL="mysql://root:root@db:3306/symfony?serverVersion=8.0&charset=utf8mb4"```
 
 Run:
 1. ```composer install```
-2. ```symfony server:start```
-3. ```docker-compose up```
+2. ```docker-compose up```
 
 ...and go to https://127.0.0.1:8000, enjoy! :)
 
